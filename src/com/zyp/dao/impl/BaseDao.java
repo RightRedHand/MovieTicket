@@ -13,7 +13,7 @@ import java.util.List;
 public class BaseDao {
 
 	public static final String DRIVER = "com.mysql.jdbc.Driver";
-	public static final String URL = "jdbc:mysql://localhost:3306/db_moview_ticket?testserverTimezone=UTC&characterEncoding=utf8&useSSL=false&Unicode=true";
+	public static final String URL = "jdbc:mysql://localhost:3306/db_moview_ticket?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&Unicode=true";
 
 	// 加载驱动，只需加载一次
 	static {
@@ -121,7 +121,6 @@ public class BaseDao {
 
 				for (int i = 0; i < rsmd.getColumnCount(); i++) {
 					String col_name = rsmd.getColumnName(i + 1);
-
 					Object value = rs.getObject(col_name);
 
 					Field field;

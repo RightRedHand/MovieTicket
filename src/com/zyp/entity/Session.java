@@ -1,13 +1,15 @@
 package com.zyp.entity;
 
+import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.Locale;
 
 public class Session {
 	int sId;
 	int hId;
 	int cId;
 	int mId;
-	Date beginTime;
+	LocalDateTime beginTime;
 	double price;
 	int remain;
 
@@ -20,7 +22,7 @@ public class Session {
 
 
 
-	public Session(int hId, int cId, Date beginTime, double price, int remain) {
+	public Session(int hId, int cId, LocalDateTime beginTime, double price, int remain) {
 		super();
 		this.hId = hId;
 		this.cId = cId;
@@ -42,7 +44,7 @@ public class Session {
 
 
 
-	public Session(int hId, int cId, int mId, Date beginTime, double price, int remain) {
+	public Session(int hId, int cId, int mId, LocalDateTime beginTime, double price, int remain) {
 		super();
 		this.hId = hId;
 		this.cId = cId;
@@ -56,7 +58,7 @@ public class Session {
 
 
 
-	public Session(int sId, int hId, int cId, int mId, Date beginTime, double price, int remain) {
+	public Session(int sId, int hId, int cId, int mId, LocalDateTime beginTime, double price, int remain) {
 		super();
 		this.sId = sId;
 		this.hId = hId;
@@ -101,12 +103,12 @@ public class Session {
 
 	
 
-	public Date getBeginTime() {
+	public LocalDateTime getBeginTime() {
 		return beginTime;
 	}
 
 
-	public void setBeginTime(Date beginTime) {
+	public void setBeginTime(LocalDateTime beginTime) {
 		this.beginTime = beginTime;
 	}
 

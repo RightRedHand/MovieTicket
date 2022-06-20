@@ -8,7 +8,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.text.SimpleDateFormat;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Vector;
 
@@ -205,7 +207,8 @@ public class SessionUi {
 			v.add(ci.getCname());
 			v.add(ci.getCaddress());
 			v.add(mo.getmName());
-			v.add(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(sessionlist2.get(i).getBeginTime()));
+
+			v.add(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Date.from(sessionlist2.get(i).getBeginTime().atZone(ZoneId.systemDefault()).toInstant())));
 			v.add(sessionlist2.get(i).getPrice());
 			v.add(sessionlist2.get(i).getRemain());
 			dtm.addRow(v);

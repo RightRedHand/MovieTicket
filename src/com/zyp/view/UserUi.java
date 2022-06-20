@@ -12,6 +12,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.text.SimpleDateFormat;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 import java.util.Vector;
 
@@ -711,7 +713,7 @@ public class UserUi implements ActionListener {
 			  v.add(cinema.getCaddress());
 			  v.add(hall.gethName());
 			  v.add(tmovie.getmName());
-			  v.add(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(session.getBeginTime()));
+			  v.add(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Date.from(session.getBeginTime().atZone(ZoneId.systemDefault()).toInstant())));
 			  v.add(session.getPrice());
 			  v.add(ticketlist.get(i).getSeat());
 			  dtm.addRow(v);
